@@ -21,7 +21,7 @@
  // #include "WProgram.h"
 // #endif
 
-#include "Wire.h"
+// #include "Wire.h"
 
 #include "Adafruit_DRV2605.h"
 
