@@ -73,15 +73,15 @@ class Adafruit_DRV2605 {
  public:
 
   Adafruit_DRV2605(void);
-  boolean begin(void);  
+  bool begin(void);  
 
-  void writeRegister8(uint8_t reg, uint8_t val);
-  uint8_t readRegister8(uint8_t reg);
-  void setWaveform(uint8_t slot, uint8_t w);
-  void selectLibrary(uint8_t lib);
+  void writeRegister8(char reg, char val);
+  char readRegister8(char reg);
+  void setWaveform(char slot, char w);
+  void selectLibrary(char lib);
   void go(void);
-  void setMode(uint8_t mode);
-  void setRealtimeValue(uint8_t rtp);
+  void setMode(char mode);
+  void setRealtimeValue(char rtp);
   // Select ERM (Eccentric Rotating Mass) or LRA (Linear Resonant Actuator) vibration motor
   // The default is ERM, which is more common
   void useERM();

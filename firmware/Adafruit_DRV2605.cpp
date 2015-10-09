@@ -40,9 +40,9 @@ Adafruit_DRV2605::Adafruit_DRV2605() {
     @brief  Setups the HW
 */
 /**************************************************************************/
-boolean Adafruit_DRV2605::begin() {
+bool Adafruit_DRV2605::begin() {
   Wire.begin();
-  uint8_t id = readRegister8(DRV2605_REG_STATUS);
+  char id = readRegister8(DRV2605_REG_STATUS);
   //Serial.print("Status 0x"); Serial.println(id, HEX);
   
   writeRegister8(DRV2605_REG_MODE, 0x00); // out of standby
@@ -69,11 +69,11 @@ boolean Adafruit_DRV2605::begin() {
   return true;
 }
 
-void Adafruit_DRV2605::setWaveform(uint8_t slot, uint8_t w) {
+void Adafruit_DRV2605::setWaveform(char slot, char w) {
   writeRegister8(DRV2605_REG_WAVESEQ1+slot, w);
 }
 
-void Adafruit_DRV2605::selectLibrary(uint8_t lib) {
+void Adafruit_DRV2605::selectLibrary(char lib) {
   writeRegister8(DRV2605_REG_LIBRARY, lib);
 }
 
@@ -81,18 +81,18 @@ void Adafruit_DRV2605::go() {
   writeRegister8(DRV2605_REG_GO, 1);
 }
 
-void Adafruit_DRV2605::setMode(uint8_t mode) {
+void Adafruit_DRV2605::setMode(char mode) {
   writeRegister8(DRV2605_REG_MODE, mode);
 }
 
-void Adafruit_DRV2605::setRealtimeValue(uint8_t rtp) {
+void Adafruit_DRV2605::setRealtimeValue(char rtp) {
   writeRegister8(DRV2605_REG_RTPIN, rtp);
 }
 
 /********************************************************************/
 
-uint8_t Adafruit_DRV2605::readRegister8(uint8_t reg) {
-  uint8_t x ;
+char Adafruit_DRV2605::readRegister8(char reg) {
+  char x ;
    // use i2c
     Wire.beginTransmission(DRV2605_ADDR);
     Wire.write((byte)reg);
@@ -106,7 +106,7 @@ uint8_t Adafruit_DRV2605::readRegister8(uint8_t reg) {
   return x;
 }
 
-void Adafruit_DRV2605::writeRegister8(uint8_t reg, uint8_t val) {
+void Adafruit_DRV2605::writeRegister8(char reg, char val) {
    // use i2c
     Wire.beginTransmission(DRV2605_ADDR);
     Wire.write((byte)reg);
