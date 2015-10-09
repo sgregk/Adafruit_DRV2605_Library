@@ -21,7 +21,7 @@
  // #include "WProgram.h"
 // #endif
 
-#include "application.h"
+//#include "application.h"
 
 #define DRV2605_ADDR 0x5A
 
