@@ -5,7 +5,6 @@
 #include "spark_wiring_i2c.h"
  
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
 #include "debug.h"
 #include "math.h"
 #include "limits.h"
